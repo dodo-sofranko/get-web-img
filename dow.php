@@ -56,6 +56,9 @@ class ImgDownloader {
 		  }
 		  echo "<p class='title'>".$title."</p>";
 		  echo "<p class='src'>".$src."</p>";
+		  if (!is_dir('images/')) {
+		    mkdir('images/');
+		  }
 		  if ($alt) {
 		  	if( in_array( $alt, $alt_names )){
 				file_put_contents("images/".$alt."-".$i.".jpg", fopen($src, 'r'));
